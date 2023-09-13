@@ -1,7 +1,8 @@
-from django.test import TestCase
+from django.test import TestCase, Client
+from .models import Item
 
 # Create your tests here.
-from django.test import TestCase, Client
+
 
 class mainTest(TestCase):
     def test_main_url_is_exist(self):
@@ -11,3 +12,8 @@ class mainTest(TestCase):
     def test_main_using_main_template(self):
         response = Client().get('/main/')
         self.assertTemplateUsed(response, 'main.html')
+
+    def test_item_model(self):
+        item = Item.objects.create(name='Test Item', amount=10, description='Test Description')
+        retrieved_item = Item.objects.get(pk=item.pk)
+        self.assertEqual(item, retrieved_item)
