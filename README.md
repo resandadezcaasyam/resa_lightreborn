@@ -104,6 +104,16 @@ Penjelasan Dari Soal-Soal:
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
 
-*Kita menggunakan virtual environment dalam pengembangan aplikasi web berbasis Django karena itu memungkinkan kita untuk menciptakan lingkungan terisolasi yang mengelola dependensi proyek secara efisien. Ini sangat penting karena setiap proyek mungkin memerlukan versi paket Python dan dependensi yang berbeda, sehingga virtual environment membantu menghindari konflik dan masalah kompatibilitas. Tanpa virtual environment, kita dapat membuat aplikasi Django, tetapi akan terbatas dalam pengelolaan dependensi, rentan terhadap konflik, dan lebih sulit untuk menjaga kebersihan sistem. Oleh karena itu, meskipun memungkinkan, sebaiknya kita selalu menggunakan virtual environment dalam pengembangan aplikasi web Django untuk menjaga isolasi dan manajemen dependensi yang efektif.
+    Kita menggunakan virtual environment dalam pengembangan aplikasi web berbasis Django karena itu memungkinkan kita untuk menciptakan lingkungan terisolasi yang mengelola dependensi proyek secara efisien. Ini sangat penting karena setiap proyek mungkin memerlukan versi paket Python dan dependensi yang berbeda, sehingga virtual environment membantu menghindari konflik dan masalah kompatibilitas. Tanpa virtual environment, kita dapat membuat aplikasi Django, tetapi akan terbatas dalam pengelolaan dependensi, rentan terhadap konflik, dan lebih sulit untuk menjaga kebersihan sistem. Oleh karena itu, meskipun memungkinkan, sebaiknya kita selalu menggunakan virtual environment dalam pengembangan aplikasi web Django untuk menjaga isolasi dan manajemen dependensi yang efektif.
 
 4. Jelaskan apakah itu MVC, MVT, MVVM dan perbedaan dari ketiganya.
+
+    MVC (Model-View-Controller), MVT (Model-View-Template), dan MVVM (Model-View-ViewModel) adalah pola desain yang digunakan dalam pengembangan perangkat lunak.
+
+    1. MVC: Terdiri dari Model (data dan logika bisnis), View (tampilan yang diberikan kepada pengguna), dan Controller (pengendali alur aplikasi). Controller menghubungkan Model dan View.
+
+    2. MVT: Ini adalah varian dari MVC yang digunakan dalam Django. Model sama, View mengatur logika tampilan, dan Template mengatur tampilan. "Controller" diatur oleh Django secara internal.
+
+    3. MVVM: Digunakan dalam pengembangan aplikasi antarmuka pengguna (UI). Model adalah data dan logika, View menampilkan tampilan, dan ViewModel berperan sebagai perantara. ViewModel mengubah data dari Model agar sesuai dengan tampilan.
+
+    Perbedaannya adalah bagaimana komponen-komponen ini berinteraksi. MVC menggunakan Controller, MVT memiliki tugas Controller internal di Django, sementara MVVM menggunakan ViewModel sebagai perantara. MVC adalah pola desain umum, MVT adalah variasi untuk Django, dan MVVM cocok untuk pengembangan aplikasi UI modern.
