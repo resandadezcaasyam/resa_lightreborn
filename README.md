@@ -127,29 +127,29 @@ Penjelasan Dari Soal-Soal:
 
     **Form GET:**
 
-* Pengiriman Data
-    * Data dari form dikirimkan sebagai bagian dari URL.
-* Visibilitas Data
-    * Data yang dikirimkan dengan metode GET terlihat di URL browser.
-* Keamanan
-    * Kurang aman karena data terbuka dan bisa dilihat oleh siapa saja.
-* Pemakaian
-    * Biasanya digunakan ketika Anda ingin mendapatkan atau mengakses data tanpa mengubahnya, seperti pencarian atau filter data.
-* Contoh
-    * Ketika Anda mencari sesuatu di mesin pencari, kata kunci pencarian ditampilkan di URL sebagai query string.
+    * Pengiriman Data
+        * Data dari form dikirimkan sebagai bagian dari URL.
+    * Visibilitas Data
+        * Data yang dikirimkan dengan metode GET terlihat di URL browser.
+    * Keamanan
+        * Kurang aman karena data terbuka dan bisa dilihat oleh siapa saja.
+    * Pemakaian
+        * Biasanya digunakan ketika Anda ingin mendapatkan atau mengakses data tanpa mengubahnya, seperti pencarian atau filter data.
+    * Contoh
+        * Ketika Anda mencari sesuatu di mesin pencari, kata kunci pencarian ditampilkan di URL sebagai query string.
 
     **Form POST:**
 
-* Pengiriman Data
-    * Data dari form dikirimkan secara tersembunyi dalam tubuh permintaan HTTP.
-* Visibilitas Data
-    * Data tidak terlihat di URL dan lebih aman karena tidak dapat dengan mudah diakses oleh orang lain.
-* Keamanan
-    * Lebih aman karena data tersembunyi.
-* Pemakaian
-    * Digunakan ketika Anda ingin mengirim data ke server untuk diproses, seperti ketika Anda mengisi formulir pendaftaran atau mengirim komentar ke situs web.
-* Contoh
-    * Ketika Anda mengisi formulir pendaftaran online, data yang Anda masukkan (seperti nama, alamat email, dan kata sandi) tidak terlihat di URL.
+    * Pengiriman Data
+        * Data dari form dikirimkan secara tersembunyi dalam tubuh permintaan HTTP.
+    * Visibilitas Data
+        * Data tidak terlihat di URL dan lebih aman karena tidak dapat dengan mudah diakses oleh orang lain.
+    * Keamanan
+        * Lebih aman karena data tersembunyi.
+    * Pemakaian
+        * Digunakan ketika Anda ingin mengirim data ke server untuk diproses, seperti ketika Anda mengisi formulir pendaftaran atau mengirim komentar ke situs web.
+    * Contoh
+        * Ketika Anda mengisi formulir pendaftaran online, data yang Anda masukkan (seperti nama, alamat email, dan kata sandi) tidak terlihat di URL.
 
     Jadi, perbedaan utama antara metode GET dan POST adalah bagaimana data dari formulir disampaikan dan dikelola. GET digunakan untuk mengambil data dari server tanpa mengirim data yang signifikan, sementara POST digunakan untuk mengirim data ke server untuk melakukan tindakan tertentu, seperti menambahkan data ke database atau mengirim pesan. Selain itu, POST lebih aman karena data tidak terlihat di URL, sementara GET memiliki visibilitas data yang lebih tinggi.
 
@@ -216,7 +216,7 @@ Penjelasan Dari Soal-Soal:
         4. Terakhir, saya menciptakan dua fungsi baru, yakni show_xml_by_id dan show_json_by_id, yang menerima parameter request dan id. Di dalam kedua fungsi ini, saya melakukan pencarian data dengan ID tertentu dari model Item. Selanjutnya, saya menghasilkan respons HttpResponse dengan menentukan parameter data yang berisi hasil pencarian tersebut yang telah di-serialisasi entah dalam format XML atau JSON, bergantung pada fungsi yang dipanggil. Saya juga menetapkan content_type sesuai dengan format yang diinginkan, yaitu "application/xml" untuk XML atau "application/json" untuk JSON.<br><br>
         
     3. Membuat routing URL untuk masing-masing views yang telah ditambahkan pada poin 2.
-        1. Pertama-tama, saya membuka berkas urls.py dalam direktori 'main'. Di dalamnya, saya melakukan impor fungsi-fungsi yang telah saya buat sebelumnya di views.py. Kemudian, saya menambahkan beberapa path URL ke dalam urlpatterns. Inilah setiap path URL yang saya tambahkan:
+        1. Langkah pertama saya adalah membuka berkas urls.py yang terletak di direktori 'main'. Di dalam berkas tersebut, saya mengimpor fungsi-fungsi yang telah saya buat sebelumnya di views.py. Kemudian, saya melanjutkan dengan menambahkan beberapa path URL ke dalam variabel urlpatterns. Berikut adalah daftar path URL yang saya tambahkan:
             * path('create-item', create_item, name='create_item'),
             * path('xml/', show_xml, name='show_xml'),
             * path('json/', show_json, name='show_json'),
@@ -234,5 +234,5 @@ Penjelasan Dari Soal-Soal:
     ![Gambar-3](gambar-3.png)
 
     ![Gambar-4](gambar-4.png)
-    
+
     ![Gambar-5](gambar-5.png)
