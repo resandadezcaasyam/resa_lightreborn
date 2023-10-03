@@ -1,47 +1,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{application}}</h1>
+<!-- NavBar -->
+<nav class="navbar navbar-light bg-light justify-content-between p-2">
+    <a class="navbar-brand">
+        <h1>{{application}}</h1>
+    </a>
+    <a href="{% url 'main:logout' %}">
+        <button class="btn btn-danger" my-2 my-sm-0>
+            Logout
+        </button>
+    </a>
+</nav>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Description</th>
-    </tr>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for items in item %}
-        <tr>
-            <td>{{items.name}}</td>
-            <td>{{items.amount}}</td>
-            <td>{{items.description}}</td>
-        </tr>
-    {% endfor %}
-</table>
-
-<br />
-
-<a href="{% url 'main:create_item' %}">
-    <button>
-        Add New Item
-    </button>
-</a>
-
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-
+<!-- Content Section -->
+<div class="m-2 d-flex flex-column align-items-center justify-content-center">
+    <h2 class="mb-4 text-center"> Selamat Datang, {{name}} dari {{class}}!</h2>
+  
+    <table class=" table table-striped table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+        <tbody>
+        {% for items in item %}
+            <tr>
+                <td>{{items.name}}</td>
+                <td>{{items.amount}}</td>
+                <td>{{items.description}}</td>
+                <td>
+                    <a href="{% url 'main:edit_item' items.pk %}" class="btn btn-danger btn-sm">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                    <a href="{% url 'main:delete_item' items.pk %}" class="btn btn-danger btn-sm">
+                          <button>
+                              Delete
+                          </button>
+                      </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h6 class="text-center">Sesi terakhir login: {{ last_login }}</h6>
+    <br />
+    
+    <a href="{% url 'main:create_item' %}">
+        <button class="btn btn-success ">
+            Add New Item
+        </button>
+    </a>
+</div>
 
 {% endblock content %}

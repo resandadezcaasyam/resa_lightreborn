@@ -346,3 +346,148 @@ Penggunaan cookies dalam pengembangan web dapat menjadi alat yang aman asalkan d
         1. Langkah pertama yang saya ambil adalah mengedit fungsi show_main yang terletak di dalam berkas views.py dalam subdirektori main. Tujuannya adalah untuk memastikan bahwa hanya objek "Item" yang terkait dengan pengguna yang sedang login yang akan ditampilkan. Ini dilakukan dengan melakukan penyaringan pada seluruh objek "Item" dan hanya mengambil item yang memiliki nilai field "user" yang cocok dengan pengguna yang sedang login saat ini. Selanjutnya, saya mengganti nilai 'nama' dalam konteks dengan 'nama': request.user.username untuk menampilkan username pengguna yang sedang login pada halaman utama, sehingga pengguna dapat dengan jelas melihat akun yang mereka gunakan.
         2. Setelah itu, saya memasukkan perintah import datetime di bagian paling atas kode. Dalam fungsi login_user, saya menambahkan beberapa bagian kode tambahan untuk mengelola cookie bernama last_login, yang akan digunakan untuk melacak waktu terakhir pengguna melakukan login. Saya menggunakan login(request, user) untuk melakukan proses login pengguna terlebih dahulu. Kemudian, saya menciptakan objek respons dengan perintah response = HttpResponseRedirect(reverse("main:show_main")). Ini berguna untuk membuat respons yang akan mengarahkan pengguna ke halaman utama setelah berhasil login. Selanjutnya, saya menambahkan perintah response.set_cookie('last_login', str(datetime.datetime.now())) untuk membuat dan menyisipkan cookie last_login ke dalam respons. Cookie ini akan memuat informasi waktu ketika pengguna terakhir kali melakukan login. Dalam fungsi show_main, saya memperbarui variabel konteks dengan menambahkan kode 'last_login': request.COOKIES['last_login']. Ini bertujuan untuk memasukkan informasi dari cookie last_login ke dalam variabel konteks. Terakhir, dalam fungsi logout_user, saya memasukkan perintah response.delete_cookie('last_login') untuk menghapus cookie last_login saat pengguna melakukan logout.
         3. Selain itu, aku juga memasukkan elemen HTML &lt;h5>Sesi login terakhir: {{ last_login }}&lt;/h5> ke dalam berkas main.html. Ini bertujuan untuk menampilkan info mengenai sesi login terakhir pengguna di halaman utama.
+
+
+## Soal Tugas 5
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+
+    Element selectors dalam CSS digunakan untuk memilih elemen-elemen HTML berdasarkan jenis atau nama elemen. Ada beberapa element selectors yang umum digunakan, seperti:
+
+ 1. Universal Selector (*):
+
+    Manfaat: Selector ini memilih semua elemen di dalam dokumen HTML.
+
+    Kapan Menggunakan: Biasanya digunakan dalam situasi khusus saat Anda ingin mengatur gaya dasar untuk semua elemen dalam dokumen. Namun, penggunaan selector ini harus dipertimbangkan dengan hati-hati karena dapat memengaruhi kinerja dan merusak struktur styling yang ada.
+
+ 2. Type Selector (Elemen HTML):
+
+    Manfaat: Selector ini memilih semua elemen dengan jenis tertentu, misalnya, "p" akan memilih semua elemen paragraf.
+
+    Kapan Menggunakan: Dapat digunakan saat Anda ingin menerapkan gaya khusus pada satu jenis elemen di seluruh dokumen.
+ 
+ 3. ID Selector (#id):
+
+Manfaat: Selector ini memilih elemen dengan atribut id tertentu.
+
+    Kapan Menggunakan: Berguna ketika Anda ingin menerapkan gaya khusus atau mengendalikan perilaku CSS pada elemen tertentu yang memiliki id unik. ID selector harus unik dalam satu halaman HTML.
+    
+ 4. Class Selector (.class):
+
+    Manfaat: Selector ini memilih elemen-elemen dengan atribut class tertentu.
+
+    Kapan Menggunakan: Digunakan ketika Anda ingin menerapkan gaya yang sama pada beberapa elemen yang memiliki kelas yang sama. Kelas dapat digunakan berulang kali dalam satu halaman.
+
+ 5. Attribute Selector ([attribute]):
+
+    Manfaat: Selector ini memilih elemen-elemen yang memiliki atribut tertentu, tanpa memandang nilai atribut tersebut.
+
+    Kapan Menggunakan: Berguna saat Anda ingin memilih elemen berdasarkan keberadaan atribut tertentu, misalnya, jika Anda ingin memilih semua elemen dengan atribut target, Anda dapat menggunakan [target].
+
+ 6. Attribute Value Selector ([attribute="value"]):
+
+    Manfaat: Selector ini memilih elemen-elemen yang memiliki atribut tertentu dengan nilai yang cocok.
+
+    Kapan Menggunakan: Berguna ketika Anda ingin memilih elemen berdasarkan nilai atribut tertentu, misalnya, jika Anda ingin memilih semua tautan dengan target="_blank".
+
+2.  Jelaskan HTML5 Tag yang kamu ketahui.
+
+    HTML5 (Hypertext Markup Language versi 5) adalah versi terbaru dari standar HTML yang digunakan untuk membuat struktur dan konten halaman web. Berikut adalah beberapa tag HTML5 yang umum digunakan:
+
+1. **`<!DOCTYPE html>`**:
+   - Ini adalah deklarasi tipe dokumen yang mendefinisikan bahwa halaman ini adalah dokumen HTML5.
+
+ 2. **`<html>`**:
+   - Ini adalah elemen root dari setiap halaman HTML5, yang mengelilingi semua elemen lainnya.
+
+ 3. **`<head>`**:
+   - Elemen ini berisi informasi meta dan referensi ke sumber daya eksternal seperti CSS dan JavaScript. Contoh tag yang sering digunakan dalam `<head>` termasuk `<meta>`, `<title>`, dan `<link>`.
+
+ 4. **`<meta>`**:
+   - Digunakan untuk menyertakan informasi metadata tentang halaman, seperti karakter encoding, deskripsi, dan kata kunci.
+
+ 5. **`<title>`**:
+   - Menentukan judul halaman web yang akan ditampilkan di tab browser.
+
+ 6. **`<link>`**:
+   - Digunakan untuk menghubungkan halaman HTML dengan berkas eksternal, seperti stylesheet CSS.
+
+ 7. **`<style>`**:
+   - Ini adalah tempat di mana Anda menentukan aturan gaya CSS secara langsung dalam dokumen HTML.
+
+ 8. **`<script>`**:
+   - Ini digunakan untuk menyisipkan kode JavaScript dalam halaman web.
+
+ 9. **`<body>`**:
+   - Ini berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, tautan, dan elemen lainnya.
+
+ 10. **`<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`**:
+    - Digunakan untuk menentukan tingkat judul atau heading. `<h1>` adalah yang paling tinggi, sedangkan `<h6>` adalah yang terendah.
+
+3. Jelaskan perbedaan antara margin dan padding.
+
+    Margin dan padding adalah dua properti penting dalam CSS yang digunakan untuk mengatur tata letak dan jarak antara elemen-elemen HTML. Mereka memiliki perbedaan utama dalam cara mereka memengaruhi tata letak elemen dan elemen-elemen lain di sekitarnya:
+
+ 1. **Margin**:
+   - **Margin** adalah ruang di luar elemen, antara elemen tersebut dan elemen-elemen lain di sekitarnya.
+   - Margin tidak memiliki latar belakang atau warna lapisan yang bisa dilihat; itu hanya mengatur ruang di sekitar elemen.
+   - Margin sering digunakan untuk mengendalikan jarak antara elemen-elemen, baik secara horizontal maupun vertikal.
+   - Nilai margin bisa positif (menambah jarak) atau negatif (mengurangi jarak), tergantung pada kebutuhan desain.
+
+ 2. **Padding**:
+   - **Padding** adalah ruang di dalam elemen, di antara batas elemen dan kontennya.
+   - Padding memengaruhi tampilan elemen itu sendiri dan akan mengisi area di dalam elemen dengan warna atau latar belakang jika diberikan.
+   - Padding sering digunakan untuk mengatur jarak antara konten dan batas elemen atau mengendalikan ruang di dalam elemen seperti kotak teks.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+    Tailwind CSS dan Bootstrap adalah dua framework CSS yang populer untuk membangun tampilan web yang responsif dan estetis. Berikut adalah perbandingan antara keduanya dan kapan sebaiknya Anda memilih satu daripada yang lain:
+
+ **Perbedaan antara Tailwind CSS dan Bootstrap**:
+
+ 1. **Filosofi Desain**:
+   - **Tailwind CSS**: Menggunakan filosofi "utility-first", yang berarti Anda membangun tampilan dengan menggabungkan kelas-kelas utilitas yang ada. Ini memberikan fleksibilitas tinggi dalam desain tetapi memerlukan pemahaman yang baik tentang kelas-kelas utilitas yang tersedia.
+   - **Bootstrap**: Bootstrap lebih bersifat "opinionated" dan mendefinisikan aturan desain yang lebih ketat. Ini memiliki sejumlah komponen bawaan yang siap digunakan.
+
+ 2. **Customisasi**:
+   - **Tailwind CSS**: Memungkinkan tingkat kustomisasi yang sangat tinggi, di mana Anda dapat merancang tampilan yang unik dengan mengatur kelas utilitas yang ada sesuai kebutuhan.
+   - **Bootstrap**: Bootstrap juga dapat disesuaikan, tetapi seringkali Anda harus melibatkan penggunaan Sass atau alat kompilasi lainnya untuk mengubah tampilannya secara mendalam.
+
+ 3. **Ukuran Berkas**:
+   - **Tailwind CSS**: Biasanya menghasilkan file CSS yang lebih besar karena memiliki banyak kelas utilitas yang harus dicakup.
+   - **Bootstrap**: Bootstrap memiliki file CSS yang lebih besar jika Anda memilih semua komponen yang ada, tetapi Anda dapat menguranginya dengan menyesuaikan paket Bootstrap sesuai kebutuhan Anda.
+
+ 4. **Kinerja**:
+   - **Tailwind CSS**: Karena menghasilkan CSS yang lebih besar, Tailwind mungkin memerlukan lebih banyak waktu untuk mengunduh dan memuat, tetapi ini dapat dioptimalkan dengan teknik-teknik seperti purging CSS yang tidak terpakai.
+   - **Bootstrap**: Lebih ringan jika Anda hanya menggunakan komponen yang Anda butuhkan, yang dapat menghasilkan kinerja yang lebih baik.
+
+ **Kapan Menggunakan Bootstrap daripada Tailwind, dan sebaliknya**:
+
+ 1. **Gunakan Bootstrap Ketika**:
+   - Anda membutuhkan prototyping cepat dan ingin komponen siap pakai untuk membangun halaman web dengan cepat.
+   - Anda ingin mengikuti desain yang lebih "out of the box" tanpa banyak kustomisasi.
+   - Anda ingin fokus pada pengembangan daripada desain.
+
+ 2. **Gunakan Tailwind CSS Ketika**:
+   - Anda ingin tingkat kustomisasi yang tinggi dan ingin merancang tampilan yang unik.
+   - Anda ingin mengurangi ukuran berkas CSS sebanyak mungkin dengan hanya mengambil apa yang Anda butuhkan.
+   - Anda memiliki pemahaman yang baik tentang CSS dan ingin mengontrol setiap aspek desain secara langsung.
+
+    Pilihan antara Tailwind CSS dan Bootstrap akan bergantung pada proyek Anda dan preferensi desain Anda. Keduanya adalah alat yang kuat, dan pemilihan tergantung pada kompleksitas proyek, tingkat kontrol yang diinginkan, dan pemahaman Anda tentang desain web dan CSS.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+    1. **Kustomisasi halaman login, register, dan tambah inventori semenarik mungkin.**
+        1. Sebelum memulai proses desain, saya telah menyisipkan Bootstrap ke dalam template base.html. Hal ini memungkinkan penggunaan framework Bootstrap untuk mempermudah dan mempercantik desain halaman.
+        
+        2. Pada halaman login, saya menggunakan Bootstrap untuk melakukan layouting yang rapi. Saya memposisikan "container" logout di tengah halaman dan memberikan padding serta margin yang sesuai untuk setiap elemennya. Saya juga memperindah desain tombol dengan menggunakan Bootstrap dan menghilangkan kata-kata "Username:" dan "Password:" yang redundan.
+
+        3. Pada halaman register, pendekatan yang saya ambil serupa dengan halaman login. Untuk membuat tampilan lebih elegan, saya menggunakan komponen "card" dari Bootstrap. Saya juga dengan teliti mengatur padding dan margin agar tampilan terlihat seimbang, dan mempercantik tampilan tombol dengan memanfaatkan fitur Bootstrap. Dengan demikian, hasilnya adalah halaman register yang terstruktur dengan baik dan memiliki desain yang menarik.
+
+        4. Pada halaman tambah inventori (Add New Item), saya juga telah menerapkan desain menggunakan komponen "card" dari Bootstrap. Saya dengan teliti mengatur margin dan padding untuk memastikan tampilan yang rapi dan seimbang. Tombol "Add Item" juga telah diberi perhatian khusus agar terlihat estetis dan sesuai dengan desain keseluruhan.
+
+    2. **Kustomisasi halaman daftar inventori menjadi lebih berwarna maupun menggunakan apporach lain seperti menggunakan Card.**
+        1. Pada halaman daftar inventori ini, saya telah menambahkan tombol "Edit" dan halaman yang sesuai, serta tombol "Delete" sesuai dengan tutorial 4 tanpa perlu menjelaskannya secara detail. Selanjutnya, saya menambahkan navigation bar pada bagian atas halaman dengan judul dan tombol "Logout" untuk memudahkan navigasi. Selain itu, saya menggabungkan nama dan kelas pada kalimat "Welcome" untuk memberikan tampilan yang lebih kompak dan mendesain tabel dengan menggunakan Bootstrap agar terlihat lebih menarik. Saya juga mengatur ukuran font untuk semua teks agar sesuai dengan desain keseluruhan. Semua elemen tersebut saya tempatkan dalam container agar terpusat dan memberikan padding serta margin agar tampilan terlihat lebih rapi. Selain itu, saya juga memperindah desain tombol "Edit", "Delete", "Logout", dan "Add New Item" agar lebih estetis dan sesuai dengan desain yang diinginkan. Dengan demikian, halaman daftar inventori ini memiliki tampilan yang terstruktur, estetis, dan nyaman digunakan.
+
+        2. Saya juga telah merancang halaman Edit item untuk memberikan tampilan yang lebih estetis dengan menggunakan komponen "card" dari Bootstrap. Selain itu, saya telah dengan cermat mengatur posisi, margin, dan padding elemen-elemen pada halaman tersebut. Selesai
