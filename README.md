@@ -123,6 +123,10 @@ Penjelasan Dari Soal-Soal:
 
     Perbedaannya adalah bagaimana komponen-komponen ini berinteraksi. MVC menggunakan Controller, MVT memiliki tugas Controller internal di Django, sementara MVVM menggunakan ViewModel sebagai perantara. MVC adalah pola desain umum, MVT adalah variasi untuk Django, dan MVVM cocok untuk pengembangan aplikasi UI modern.
 
+</details>
+
+<details>
+
 <summary>Soal Tugas 3</summary>
 1. Apa perbedaan antara form POST dan form GET dalam Django?
 
@@ -240,6 +244,9 @@ Penjelasan Dari Soal-Soal:
 
     ![Gambar-5](gambar-5.png)
 
+</details>
+
+<details>
 
 <summary>Soal Tugas 4</summary>
 
@@ -350,6 +357,9 @@ Penggunaan cookies dalam pengembangan web dapat menjadi alat yang aman asalkan d
         2. Setelah itu, saya memasukkan perintah import datetime di bagian paling atas kode. Dalam fungsi login_user, saya menambahkan beberapa bagian kode tambahan untuk mengelola cookie bernama last_login, yang akan digunakan untuk melacak waktu terakhir pengguna melakukan login. Saya menggunakan login(request, user) untuk melakukan proses login pengguna terlebih dahulu. Kemudian, saya menciptakan objek respons dengan perintah response = HttpResponseRedirect(reverse("main:show_main")). Ini berguna untuk membuat respons yang akan mengarahkan pengguna ke halaman utama setelah berhasil login. Selanjutnya, saya menambahkan perintah response.set_cookie('last_login', str(datetime.datetime.now())) untuk membuat dan menyisipkan cookie last_login ke dalam respons. Cookie ini akan memuat informasi waktu ketika pengguna terakhir kali melakukan login. Dalam fungsi show_main, saya memperbarui variabel konteks dengan menambahkan kode 'last_login': request.COOKIES['last_login']. Ini bertujuan untuk memasukkan informasi dari cookie last_login ke dalam variabel konteks. Terakhir, dalam fungsi logout_user, saya memasukkan perintah response.delete_cookie('last_login') untuk menghapus cookie last_login saat pengguna melakukan logout.
         3. Selain itu, aku juga memasukkan elemen HTML &lt;h5>Sesi login terakhir: {{ last_login }}&lt;/h5> ke dalam berkas main.html. Ini bertujuan untuk menampilkan info mengenai sesi login terakhir pengguna di halaman utama.
 
+</details>
+
+<details>
 
 <summary>Soal Tugas 5</summary>
 
