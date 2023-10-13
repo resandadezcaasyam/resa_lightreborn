@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import show_main, create_item, show_xml, show_json, show_xml_by_id, show_json_by_id 
+from main.views import add_item_ajax, get_item_json, show_main, create_item, show_xml, show_json, show_xml_by_id, show_json_by_id 
 from main.views import register #sesuaikan dengan nama fungsi yang dibuat
 from main.views import login_user #sesuaikan dengan nama fungsi yang dibuat
 from main.views import logout_user
@@ -20,4 +20,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('edit-item/<int:id>', edit_item, name='edit_item'),
     path('delete/<int:id>', delete_item, name='delete_item'), # sesuaikan dengan nama fungsi yang dibuat
+    path('get-item/', get_item_json, name='get_item_json'),
+    path('create-ajax/', add_item_ajax, name='add_item_ajax'),
 ]

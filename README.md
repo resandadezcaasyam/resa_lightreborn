@@ -6,8 +6,9 @@
 
 ## Kelas   : PBP C
 
+Link Web : http://resanda-dezca-tugas.pbp.cs.ui.ac.id
 
-## Soal Tugas 2
+<summary>Soal Tugas 2</summary>
 
 Penjelasan Dari Soal-Soal:
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
@@ -120,7 +121,7 @@ Penjelasan Dari Soal-Soal:
 
     Perbedaannya adalah bagaimana komponen-komponen ini berinteraksi. MVC menggunakan Controller, MVT memiliki tugas Controller internal di Django, sementara MVVM menggunakan ViewModel sebagai perantara. MVC adalah pola desain umum, MVT adalah variasi untuk Django, dan MVVM cocok untuk pengembangan aplikasi UI modern.
 
-## Soal Tugas 3
+<summary>Soal Tugas 3</summary>
 1. Apa perbedaan antara form POST dan form GET dalam Django?
 
     Perbedaan antara metode form POST dan GET dalam Django, serta dalam pengembangan web secara umum adalah:
@@ -238,7 +239,7 @@ Penjelasan Dari Soal-Soal:
     ![Gambar-5](gambar-5.png)
 
 
-## Soal Tugas 4
+<summary>Soal Tugas 4</summary>
 
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
 
@@ -348,7 +349,7 @@ Penggunaan cookies dalam pengembangan web dapat menjadi alat yang aman asalkan d
         3. Selain itu, aku juga memasukkan elemen HTML &lt;h5>Sesi login terakhir: {{ last_login }}&lt;/h5> ke dalam berkas main.html. Ini bertujuan untuk menampilkan info mengenai sesi login terakhir pengguna di halaman utama.
 
 
-## Soal Tugas 5
+<summary>Soal Tugas 5</summary>
 
 1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
 
@@ -491,3 +492,153 @@ Manfaat: Selector ini memilih elemen dengan atribut id tertentu.
         1. Pada halaman daftar inventori ini, saya telah menambahkan tombol "Edit" dan halaman yang sesuai, serta tombol "Delete" sesuai dengan tutorial 4 tanpa perlu menjelaskannya secara detail. Selanjutnya, saya menambahkan navigation bar pada bagian atas halaman dengan judul dan tombol "Logout" untuk memudahkan navigasi. Selain itu, saya menggabungkan nama dan kelas pada kalimat "Welcome" untuk memberikan tampilan yang lebih kompak dan mendesain tabel dengan menggunakan Bootstrap agar terlihat lebih menarik. Saya juga mengatur ukuran font untuk semua teks agar sesuai dengan desain keseluruhan. Semua elemen tersebut saya tempatkan dalam container agar terpusat dan memberikan padding serta margin agar tampilan terlihat lebih rapi. Selain itu, saya juga memperindah desain tombol "Edit", "Delete", "Logout", dan "Add New Item" agar lebih estetis dan sesuai dengan desain yang diinginkan. Dengan demikian, halaman daftar inventori ini memiliki tampilan yang terstruktur, estetis, dan nyaman digunakan.
 
         2. Saya juga telah merancang halaman Edit item untuk memberikan tampilan yang lebih estetis dengan menggunakan komponen "card" dari Bootstrap. Selain itu, saya telah dengan cermat mengatur posisi, margin, dan padding elemen-elemen pada halaman tersebut. Selesai
+
+<summary>Tugas 6</summary>
+
+**1. Jelaskan perbedaan antara _asynchronous programming_ dengan _synchronous programming_.**
+
+**Jawaban:**
+
+Asynchronous programming dan synchronous programming adalah dua paradigma yang berbeda dalam pengembangan perangkat lunak. Mereka mempengaruhi cara program Anda berinteraksi dengan tugas yang memerlukan waktu, seperti mengambil data dari jaringan atau sistem file. Berikut adalah perbedaan utama antara keduanya:
+
+* **Synchronous Programming**
+    
+    * Blocking Nature (Sifat Blocking): Dalam pemrograman sinkron, tugas tunggu tindakan tertentu hingga selesai sebelum melanjutkan ke tugas berikutnya. Ini berarti program Anda berhenti (menunggu) sampai tugas saat ini selesai sebelum menjalankan tugas berikutnya.
+    
+    * Thread Blocking: Dalam aplikasi berbasis thread, pemrograman sinkron dapat menyebabkan thread utama atau utama program terblokir, yang dapat menghentikan aplikasi sepenuhnya jika ada tugas yang memakan waktu.
+    
+    * Relatif Mudah Dimengerti: Kode sinkron relatif mudah dimengerti dan di-debug karena urutan eksekusi yang jelas dan mudah diprediksi.\
+    
+    * Kemampuan Bergantung pada Performa: Kinerja aplikasi sinkron sangat tergantung pada kecepatan eksekusi tugas. Jika ada tugas yang memakan waktu, aplikasi dapat merasa lambat atau tidak responsif.
+
+* **Asynchronous Programming:**
+    * Non-blocking Nature (Sifat Non-Blocking): Dalam pemrograman asinkron, Anda dapat melanjutkan eksekusi program tanpa harus menunggu tugas saat ini selesai. Ini dilakukan dengan menggunakan konsep seperti callback, promise, atau async/await (dalam bahasa-bahasa seperti JavaScript atau Python).
+    
+    * Concurrency: Asynchronous programming memungkinkan beberapa tugas berjalan bersamaan tanpa mengganggu satu sama lain. Ini dapat meningkatkan efisiensi dan responsivitas aplikasi.
+
+    * Kompleksitas Tambahan: Kode asinkron seringkali lebih kompleks daripada kode sinkron karena perlu mengelola callback, promise, atau penggunaan async/await. Ini bisa membuat kode lebih sulit dimengerti dan didebug.
+
+    * Mengatasi Tugas Memakan Waktu: Asynchronous programming sangat berguna ketika Anda perlu mengatasi tugas yang memakan waktu seperti permintaan jaringan atau operasi disk tanpa menghalangi eksekusi program.
+    
+    * Perlu Perhatian Khusus: Kesalahan dalam kode asinkron dapat menyebabkan masalah yang sulit di-debug seperti callback hell atau masalah konkurensi.<br><br>
+
+**2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma _event-driven programming_. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.**
+
+**Jawaban:**
+
+Paradigma "event-driven programming" adalah suatu paradigma pemrograman di mana program merespons peristiwa (event) yang terjadi, seperti tindakan pengguna, sinyal sistem, atau kejadian eksternal. Dalam paradigma ini, program secara aktif menunggu peristiwa dan menjalankan kode berdasarkan peristiwa yang terjadi. Paradigma ini sangat umum dalam pengembangan web dan aplikasi yang berinteraksi dengan pengguna. 
+
+contoh: 
+
+Salah satu fitur utama dari paradigma event-driven programming adalah penggunaan event listeners atau handlers yang mendengarkan kejadian yang terjadi dan menjalankan fungsi tertentu ketika kejadian itu terjadi. Ini memungkinkan program untuk merespons interaksi pengguna atau perubahan data secara dinamis. Contoh penerapannya pada tugas 6 ini adalah penggunaan event-driven programming dalam mengendalikan modal (popup) yang muncul ketika tombol “Add Item by AJAX” ditekan.
+
+**3. Jelaskan penerapan _asynchronous programming_ pada AJAX.**
+
+**Jawaban:**
+
+Penerapan asynchronous programming pada AJAX adalah salah satu karakteristik utama dari teknologi ini. AJAX, yang merupakan singkatan dari "Asynchronous JavaScript and XML," memungkinkan pengembang untuk membuat permintaan HTTP ke server tanpa harus me-refresh seluruh halaman web. Di balik layar, AJAX menggunakan asynchronous programming untuk menjalankan operasi tanpa menghentikan eksekusi kode lain atau proses.
+
+* **Permintaan HTTP Asynchronous**
+
+    Ketika Anda menggunakan AJAX untuk membuat permintaan HTTP, seperti GET atau POST, operasi ini dijalankan secara asinkron. Ini berarti bahwa JavaScript Anda dapat melanjutkan eksekusi kode lain tanpa harus menunggu respons dari server. Dengan cara ini, aplikasi web tetap responsif dan tidak terblokir oleh operasi jaringan yang memerlukan waktu.
+
+* **Menangani Respons Asynchronous**
+
+    Ketika Anda membuat permintaan asinkron, Anda juga harus menetapkan callback function yang akan dipanggil ketika permintaan selesai atau ada respons dari server. Callback ini biasanya ditetapkan pada properti onreadystatechange dari objek XMLHttpRequest.
+
+* **Callback Functions**
+
+    Dalam asynchronous programming, Anda sering menggunakan callback functions untuk menentukan tindakan yang akan dijalankan ketika permintaan asinkron selesai. Callback functions ini akan dipanggil ketika operasi asinkron selesai atau ada respons dari server.
+
+* **Menghindari Blocking**
+
+    Dalam asynchronous programming, kode JavaScript Anda akan melanjutkan eksekusi, dan aplikasi web tetap responsif, sementara permintaan AJAX sedang dalam proses. Ini menghindari blocking yang dapat terjadi jika menggunakan pemrograman synchronous di mana aplikasi akan berhenti hingga permintaan selesai.
+
+* **Handling Errors**
+
+    Dalam asynchronous programming, Anda juga perlu menangani kesalahan yang mungkin terjadi selama permintaan, seperti ketika server mengembalikan respons dengan status error. Anda dapat menambahkan logika untuk menangani kesalahan ini dalam callback function.
+
+* **Promise and async/await (ES6+)**
+
+    Di dalam JavaScript yang lebih baru, Anda dapat menggunakan Promise dan async/await untuk mengelola operasi asinkron dengan cara yang lebih bersih dan mudah dibaca.<br><br>
+
+**4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada _library_ jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.**
+
+**Jawaban:**
+
+* **Fetch API**
+    * Built-in Browser Feature: Fetch API adalah fitur yang telah disediakan oleh semua browser modern, sehingga tidak perlu mengunduh atau memasang pustaka tambahan. Ini membuat kode Anda lebih ringan dan mengurangi waktu unduhan untuk pengguna.
+    
+    * Promise-Based: Fetch API menggunakan promise untuk mengelola respons dari permintaan, yang memungkinkan Anda untuk mengatasi operasi asinkron dengan cara yang lebih bersih dan modern. Ini menghindari "callback hell" yang bisa terjadi dalam penggunaan callback dalam jQuery.
+    
+    * Fleksibel dan Kuat: Fetch API memberikan lebih banyak kontrol dan fleksibilitas dalam mengelola permintaan HTTP dan respons. Anda dapat mengonfigurasi permintaan Anda dengan lebih rinci dan memproses respons dalam berbagai format (JSON, teks, Blob, dsb.).
+
+    * Modul Universal: Fetch API dapat digunakan di lingkungan yang lebih luas daripada hanya dalam pengembangan web. Ini dapat digunakan dalam aplikasi JavaScript modern dan Node.js, serta di berbagai platform. 
+
+* **jQuery**
+    
+    * Cross-Browser Compatibility: jQuery adalah perpustakaan JavaScript yang telah digunakan dalam pengembangan web selama bertahun-tahun. Ini telah dioptimalkan untuk kompatibilitas lintas browser dan mengatasi masalah konsistensi peramban.
+    
+    * Simplifikasi: jQuery memproses banyak tugas AJAX yang umum dengan sintaks yang lebih sederhana dan mudah dimengerti daripada Fetch API. Ini dapat mempersingkat kode Anda dan memungkinkan pengembangan yang lebih cepat.
+    
+    * Beragam Plugin: jQuery memiliki ekosistem plugin yang kaya, yang dapat digunakan untuk berbagai tugas dalam pengembangan web. Ini dapat mempercepat pengembangan dengan menyediakan solusi siap pakai.
+
+    * Kompatibilitas Versi: Meskipun lebih tua, jQuery masih banyak digunakan dalam proyek-proyek yang membutuhkan dukungan terhadap versi peramban yang lebih lama. Ini dapat berguna jika Anda perlu mendukung peramban lama.
+
+Pendapat tentang teknologi mana yang lebih baik untuk digunakan tergantung pada kebutuhan proyek Anda dan preferensi Anda sebagai pengembang. Jika Anda mengembangkan aplikasi web modern di mana efisiensi dan fleksibilitas diperlukan, Fetch API adalah pilihan yang kuat. Namun, jika Anda bekerja dengan proyek yang lebih besar, memiliki dukungan untuk peramban lama, atau hanya ingin tugas AJAX yang lebih sederhana, jQuery masih bisa menjadi pilihan yang baik.
+
+**5. Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step._**
+
+**Jawaban:**
+
+1. **Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.**
+
+    * **AJAX GET**
+
+        1. **Ubahlah kode tabel data item agar dapat mendukung AJAX GET.**
+
+            1. Pertama-tama, saya mengakses berkas "main.html" dalam direktori "main/templates" dan menghapus kode tabel yang telah saya buat dalam tutorial sebelumnya. Kemudian, saya menambahkan elemen &lt;table id="item_table">&lt;/table> untuk menyiapkan tempat bagi tabel data item yang akan ditampilkan.
+
+        2. **Lakukan pengambilan task menggunakan AJAX GET.**
+
+            1. Selanjutnya, saya membuat sebuah fungsi bernama get_item_json dalam berkas "views.py" yang bertugas mengembalikan data dalam format JSON. Fungsi ini memungkinkan penampilan data item pada halaman HTML dengan menggunakan fetch API, tergantung pada pengguna yang sedang login.
+
+            2. Selanjutnya, saya membuka berkas "urls.py" dalam folder "main" dan mengimpor fungsi get_item_json, kemudian menambahkan path URL yang mengarah ke fungsi tersebut ke dalam daftar urlpatterns (path('get-item/', get_item_json, name='get_item_json'))
+
+            3. Kemudian, saya membuat sebuah blok &lt;script> di bagian bawah berkas HTML dan mendefinisikan fungsi getItems() di dalamnya. Fungsi ini menggunakan fetch API untuk mengambil data JSON secara asinkron. Setelah data berhasil diambil, saya menggunakan metode .then() untuk melakukan parsing data JSON menjadi objek JavaScript yang dapat diolah lebih lanjut.<br><br>
+
+    * **AJAX POST**
+        
+        3. **Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.**
+
+            1. Langkah pertama yang saya ambil adalah menambahkan kode untuk mengimplementasikan modal dengan menggunakan komponen Bootstrap dalam aplikasi saya.
+
+            2. Kemudian, saya menyisipkan sebuah tombol dengan peran penting dalam mengaktifkan modal tersebut. Kode tombol yang saya tambahkan yaitu &lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Item by AJAX&lt;/button>. Penggunaan atribut data-bs-toggle dan data-bs-target adalah bagian integral dari Bootstrap yang memungkinkan penggunaan modal dengan mudah. 
+
+        4. **Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data.**
+
+            1. Saya melanjutkan dengan pembuatan fungsi baru dalam berkas "views.py" yang saya beri nama add_item_ajax. Fungsi ini menerima parameter request yang akan digunakan untuk menangani permintaan dari pengguna. Untuk memastikan keamanan, saya menambahkan dekorator @csrf_exempt di atas fungsi add_item_ajax.
+
+            2. Dalam implementasi fungsi add_item_ajax, saya menjalankan beberapa tindakan penting yang diperlukan. Salah satu tindakan tersebut adalah menggunakan kode name = request.POST.get("name") untuk mengambil nilai yang dikirimkan dalam request dengan nama "name". Hal yang sama dilakukan untuk "amount", "description", dan "user" dengan menggunakan request.user. Nilai-nilai yang berhasil diambil ini kemudian digunakan untuk membentuk sebuah objek Item baru. Dengan memasukkan nilai-nilai ini sebagai parameter, saya berhasil menambahkan item baru ke dalam basis data dengan menggunakan data yang diterima dari permintaan AJAX.
+
+        5. **Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.**
+
+            1. Setelahnya, saya membuka berkas "urls.py" dalam folder "main" dan mengimpor fungsi add_item_ajax. Selanjutnya, saya menambahkan path URL yang mengarah ke fungsi tersebut ke dalam daftar urlpatterns dengan perintah path('create-ajax/', add_item_ajax, name='add_item_ajax').
+
+        6. **Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.**
+
+            1. Selanjutnya, saya membuat fungsi JavaScript baru dengan nama addItem() untuk menghubungkan form yang telah saya buat dalam modal dengan path "/create-ajax/" atau URL dari fungsi add_item_ajax yang telah saya definisikan dalam berkas "views.py". Fungsi ini bertujuan untuk menambahkan data ke basis data secara asinkron melalui AJAX, berdasarkan input yang diberikan oleh pengguna. Dalam implementasi fungsi addItem(), saya menggunakan kode new FormData(document.querySelector('#form')) untuk membuat objek FormData baru. Objek FormData ini akan mengumpulkan data dari form yang ada dalam modal, sehingga nantinya data tersebut dapat dikirimkan ke server. Setelah proses pengiriman data berhasil, saya menggunakan document.getElementById("form").reset() untuk mengosongkan isi dari field-field form pada modal setelah data berhasil ditambahkan.
+
+            2. Untuk memastikan fungsi addItem() dijalankan saat pengguna mengklik tombol "Add Item" pada modal, saya menambahkan atribut onclick pada tombol tersebut dengan kode document.getElementById("button_add").onclick = addItem. 
+
+        7. **Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa reload halaman utama secara keseluruhan.**
+
+            1. Selanjutnya, saya membuat sebuah fungsi baru dalam blok &lt;script> yang saya beri nama refreshItems(). Fungsi ini bertujuan untuk melakukan refresh data item secara asinkron. Dalam implementasinya, saya menggunakan document.getElementById("item_table") untuk mengambil elemen berdasarkan ID-nya. Pada baris kode ini, elemen yang saya tuju adalah elemen &lt;table> yang memiliki ID "item_table". Saya menggunakan properti innerHTML untuk mengelola isi dari elemen tersebut. Jika innerHTML bernilai "", maka hal ini akan mengosongkan semua elemen anak (child elements) dari elemen yang dituju. Kemudian, saya menggunakan metode forEach() untuk melakukan perulangan (loop) pada data items yang telah diambil sebelumnya menggunakan fungsi getItems(). Dalam setiap iterasi loop, saya menggabungkan (concatenate) data dari objek item dengan variabel htmlString yang digunakan untuk membangun struktur tabel. Terakhir, saya memanggil fungsi refreshItems() setiap kali untuk memastikan daftar item diperbarui secara otomatis tanpa perlu melakukan reload halaman utama.<br><br>
+
+    * **Melakukan perintah collectstatic.**
+
+        8. **Perintah ini bertujuan untuk mengumpulkan file static dari setiap aplikasi kamu ke dalam suatu folder yang dapat dengan mudah disajikan pada produksi.**
+
+            1. Langkah pertama yang saya ambil adalah berpindah ke direktori proyek "resa_lightreborn" menggunakan perintah cd. Setelah berada dalam direktori proyek, saya mengaktifkan lingkungan virtual (environment) jika digunakan untuk memisahkan dan mengisolasi dependensi proyek.
+
+            2. Selanjutnya, saya menjalankan perintah python manage.py collectstatic pada terminal. Tujuan dari perintah ini adalah untuk mengumpulkan semua file static dari setiap aplikasi dalam proyek saya dan menempatkannya dalam satu folder khusus. Hasil pengumpulan ini disimpan dalam direktori yang telah dikonfigurasi dalam pengaturan Django, dan dalam kasus ini, hasil pengumpulan disimpan di 'D:\Big Data\Kuliah\Universitas Indonesia\0-Semester 3\PBP (Pemrogramman Berbasis Platform)\Project PBP\resa_lightreborn\static'.
