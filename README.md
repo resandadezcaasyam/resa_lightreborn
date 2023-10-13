@@ -8,6 +8,8 @@
 
 Link Web : http://resanda-dezca-tugas.pbp.cs.ui.ac.id
 
+<details>
+
 <summary>Soal Tugas 2</summary>
 
 Penjelasan Dari Soal-Soal:
@@ -642,3 +644,5 @@ Pendapat tentang teknologi mana yang lebih baik untuk digunakan tergantung pada 
             1. Langkah pertama yang saya ambil adalah berpindah ke direktori proyek "resa_lightreborn" menggunakan perintah cd. Setelah berada dalam direktori proyek, saya mengaktifkan lingkungan virtual (environment) jika digunakan untuk memisahkan dan mengisolasi dependensi proyek.
 
             2. Selanjutnya, saya menjalankan perintah python manage.py collectstatic pada terminal. Tujuan dari perintah ini adalah untuk mengumpulkan semua file static dari setiap aplikasi dalam proyek saya dan menempatkannya dalam satu folder khusus. Hasil pengumpulan ini disimpan dalam direktori yang telah dikonfigurasi dalam pengaturan Django, dan dalam kasus ini, hasil pengumpulan disimpan di 'D:\Big Data\Kuliah\Universitas Indonesia\0-Semester 3\PBP (Pemrogramman Berbasis Platform)\Project PBP\resa_lightreborn\static'.
+
+</details>
