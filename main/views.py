@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from main.forms import ItemForm
 from main.models import Item
@@ -146,13 +147,14 @@ def add_item_ajax(request):
 
     return HttpResponseNotFound()
 
+#Disini ada pengubahan dikit
 @csrf_exempt
 def create_product_flutter(request):
     if request.method == 'POST':
         
         data = json.loads(request.body)
 
-        new_product = Product.objects.create(
+        new_product = Item.objects.create(
             user = request.user,
             name = data["name"],
             price = int(data["price"]),
