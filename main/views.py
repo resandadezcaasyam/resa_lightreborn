@@ -32,6 +32,7 @@ def show_main(request):
 
     return render(request, "main.html", context)
 
+@login_required(login_url='/login')
 def create_item(request):
     form = ItemForm(request.POST or None)
 
@@ -45,6 +46,7 @@ def create_item(request):
     context = {'form': form}
     return render(request, "create_item.html", context)
 
+@login_required(login_url='/login')
 def edit_item(request, id):
     # Get product berdasarkan ID
     item = Item.objects.get(pk = id)
@@ -60,6 +62,7 @@ def edit_item(request, id):
     context = {'form': form}
     return render(request, "edit_item.html", context)
 
+@login_required(login_url='/login')
 def delete_item(request, id):
     # Get data berdasarkan ID
     item = Item.objects.get(pk = id)
@@ -68,22 +71,27 @@ def delete_item(request, id):
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('main:show_main'))
 
+@login_required(login_url='/login')
 def show_xml(request):
     data = Item.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
+@login_required(login_url='/login')
 def show_json(request):
     data = Item.objects.all()
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@login_required(login_url='/login')
 def show_xml_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
+@login_required(login_url='/login')
 def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
+@csrf_exempt
 def register(request):
     form = UserCreationForm()
 
@@ -111,12 +119,14 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
+@login_required(login_url='/login')
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
 
+@login_required(login_url='/login')
 def get_item_json(request):
     item = Item.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', item))
